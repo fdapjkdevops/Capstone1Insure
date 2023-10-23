@@ -3,7 +3,7 @@ node{
     def mavenHome, mavenCMD, docker, tag, dockerHubUser, containerName, httpPort = ""
    
     stage('Environment info') {
-       sh "ps aux | grep '/usr/bin/daemon' | grep 'jenkins' | awk {'print $1'}"
+       sh "whoami"
     }
  
     stage('Prepare Environment'){
