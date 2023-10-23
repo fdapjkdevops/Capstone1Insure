@@ -1,7 +1,11 @@
 node{
     
     def mavenHome, mavenCMD, docker, tag, dockerHubUser, containerName, httpPort = ""
-    
+   
+    stage('Environment info') {
+       sh "ps aux | grep '/usr/bin/daemon' | grep 'jenkins' | awk {'print $1'}"
+    }
+ 
     stage('Prepare Environment'){
         echo 'Initialize Environment'
         mavenHome = tool name: 'maven' , type: 'maven'
